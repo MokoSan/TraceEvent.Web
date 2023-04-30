@@ -68,7 +68,7 @@ namespace TraceEvent.Web.Controllers
                         TotalGCPauseTimeMSec = stats.TotalPauseTimeMSec
                     });
             }
-t
+
             System.IO.File.Delete(path);
             if (System.IO.File.Exists(uploads)) 
             { 
