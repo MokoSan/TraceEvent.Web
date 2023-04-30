@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.IO;
 using Microsoft.Diagnostics.Tracing;
 using Microsoft.Diagnostics.Tracing.Analysis;
 using Etlx = Microsoft.Diagnostics.Tracing.Etlx;
@@ -67,8 +68,12 @@ namespace TraceEvent.Web.Controllers
                         TotalGCPauseTimeMSec = stats.TotalPauseTimeMSec
                     });
             }
-
-            // TODO: Clean up file.
+t
+            System.IO.File.Delete(path);
+            if (System.IO.File.Exists(uploads)) 
+            { 
+                System.IO.File.Delete(uploads);
+            }
 
             return Ok(gcInfos);
         }
